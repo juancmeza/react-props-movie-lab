@@ -14,15 +14,22 @@ export default class CardBack extends Component {
     // implement meeeee! See the readme for instructions
   }
 
+  renderGenres = () => {
+    return this.props.genres.map(genre => <li>{genre}</li>)
+  }
+
   render() {
     return (
       <div className="card-back">
-        <h3 className="title"></h3>
+        <h3 className="title">Title: {this.props.title}</h3>
         <span />
         { /* your rating element should go here -- you can invoke methods within JSX, à la: this.myMethod() */ }
         <span />
-        <h5 className="genres"></h5>
+        <h5 className="genres">{this.renderGenres()}</h5>
       </div>
     )
   }
 }
+
+<li>Rating: {this.props.iMDBRating}</li>
+<li>Genres:</li>
